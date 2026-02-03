@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #E8F2FE;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-bar {
+      align-items: center;
+      background-color: #001F3F;
+      display: flex;
+      height: 10vh;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .nav-bar button, .logo {
+      border: none;
+      cursor: pointer;
+      margin-right: 200px;
+    }
+
+    .nav-bar button, .card button {
+      background-color: #001F3F;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5vw;
+      outline: none;
+      padding: 1%; 
+    }
+
+    .nav-bar .dropdown {
+      position: relative;
+    }
+
+    .nav-bar .dropdown-content {
+      background-color: #001F3F;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      color: white;
+      display: none;
+      font-family: 'Roboto', sans-serif; 
+      min-width: 160px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .nav-bar .dropdown-content a {
+      color: white;
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+    }
+
+    .nav-bar .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .logo {
+      background-image: url("images/Logo.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex: 0 0 auto;
+      height: 10vh; 
+      margin-left: 0;
+      margin-right: 10%; 
+      width: 15vw;
+    }
+
+    .header {
+      color: black;
+      font-family: "Roboto", sans-serif;
+      font-size: 2vw;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      top: 15%;
+      transform: translate(-50%, -50%);
+    }
+
+    .question1, .question2, .question3, .answer1, .answer2, .answer3 {
+      color: black;
+      font-family: "Roboto", sans-serif;
+      left: 50%;
+      position: absolute;
+      width: 70%;
+    }
+
+    .question1, .question2, .question3 {
+      font-size: 1.5vw;
+      transform: translateX(-50%);
+    }
+
+    .answer1, .answer2, .answer3 {
+      font-size: 1vw;
+      transform: translateX(-50%);
+      word-wrap: break-word;
+    }
+
+    .question1 {
+      top: 20%;
+    }
+
+    .question2 {
+      top: 35%;
+    }
+
+    .question3 {
+      top: 50%;
+    }
+
+    .answer1 {
+      top: 28%;
+    }
+
+    .answer2 {
+      top: 43%;
+    }
+
+    .answer3 {
+      top: 58%;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <h3 class="header">Frequently Asked Questions</h3>
+  <h5 class="question1">1. What is the recommended age range for taking chess lessons?</h5>
+  <h5 class="question2">2. How do I select the right coaching package for my needs?</h5>
+  <h5 class="question3">3. Do I need any prior chess knowledge to start coaching sessions?</h5>
+  <h5 class="answer1">Our chess coaching services are suitable for individuals of all ages. Whether you're a child, teenager, adult, or senior, our coaches tailor the instruction to your specific age group and skill level, ensuring an engaging and effective learning experience.</h5>
+  <h5 class="answer2">We offer a range of coaching packages designed to cater to different preferences and goals. We recommend considering factors such as your current skill level, desired level of commitment, and available free time for practice. Our team is here to assit you in choosing the package that best aligns with your aspirations, so feel free to reach out to us for personalized guidance and recommendations.</h5>
+  <h5 class="answer3">No prior chess knowledge is required to begin coaching sessions. Our coaching programs cater to all skill levels, from absolute beginners to advanced players. Additionally, we offer beginner courses, specifically designed to teach the fundamentals and basic concepts to chess.</h5>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <script type="text/babel">
+    function Nav() {
+      return (
+        <nav className="nav-bar">
+          <a href="index.html" className="logo"></a>
+          <div className="dropdown">
+            <button>Services</button>
+            <div className="dropdown-content">
+              <a href="coaching.html">Coaching</a>
+              <a href="courses.html">Courses</a>
+            </div>
+          </div>
+          <div className="dropdown">
+            <button>About</button>
+            <div className="dropdown-content">
+              <a href="faq.html">FAQ</a>
+              <a href="experts.html">Experts</a>
+              <a href="testimonials.html">Testimonials</a>
+            </div>
+          </div>
+          <div className="dropdown">
+            <button>Study</button>
+            <div className="dropdown-content">
+              <a href="articles.html">Articles</a>
+              <a href="puzzles.html">Puzzles</a>
+              <a href="videos.html">Videos</a>
+            </div>
+          </div>
+          <div className="dropdown">
+            <button>Connect</button>
+            <div className="dropdown-content">
+              <a href="competitions.html">Competitions</a>
+              <a href="contact.html">Contact Us</a>
+              <a href="friends.html">Friends</a>
+            </div>
+          </div>
+          <a href="faq_fr.html"><button>FR</button></a>
+        </nav>
+      );
+    }
+
+    ReactDOM.render(<Nav/>, document.getElementById('root'));
+  </script>
+</body>
+</html>

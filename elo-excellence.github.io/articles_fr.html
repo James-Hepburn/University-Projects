@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #E8F2FE;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-bar {
+      align-items: center;
+      background-color: #001F3F;
+      display: flex;
+      height: 10vh;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .nav-bar button, .logo {
+      border: none;
+      cursor: pointer;
+      margin-right: 175px;
+    }
+
+    .nav-bar button, .card button {
+      background-color: #001F3F;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5vw;
+      outline: none;
+      padding: 1%; 
+    }
+
+    .nav-bar .dropdown {
+      position: relative;
+    }
+
+    .nav-bar .dropdown-content {
+      background-color: #001F3F;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      color: white;
+      display: none;
+      font-family: 'Roboto', sans-serif; 
+      min-width: 160px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .nav-bar .dropdown-content a {
+      color: white;
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+    }
+
+    .nav-bar .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .logo {
+      background-image: url("images/Logo.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex: 0 0 auto;
+      height: 10vh; 
+      margin-left: 0;
+      margin-right: 10%; 
+      width: 15vw;
+    }
+
+    .header {
+      color: black;
+      font-family: "Roboto", sans-serif;
+      font-size: 2vw;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      top: 15%;
+      transform: translate(-50%, -50%);
+    }
+
+    .filters {
+      background-color: #001F3F;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      left: 0;
+      margin-left: 50px;
+      padding: 20px;
+      position: fixed;
+      top: 20vh;
+      width: 180px;
+      height: 500px;
+    }
+
+    .filters h4 {
+      margin-top: 0;
+    }
+
+    .filters label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .filters input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .articles {
+      margin-left: 400px;
+      margin-top: 180px;
+      width: 500px;
+    }
+
+    .article {
+      background-color: #001F3F;
+      border: none;
+      color: white;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <h3 class="header">Articles</h3>
+  
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <script type="text/babel">
+    function Filters({selectedFilters, onFilterChange}) {
+      return (
+        <div className="filters">
+          <h4>Filtrer par Catégorie</h4>
+          <label>
+            <input
+              type="checkbox"
+              value="opening-theory"
+              checked={selectedFilters.includes("opening-theory")}
+              onChange={onFilterChange}
+            />
+            Théorie des Ouvertures
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="middlegame"
+              checked={selectedFilters.includes("middlegame")}
+              onChange={onFilterChange}
+            />
+            Milieu de Partie
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="endgames"
+              checked={selectedFilters.includes("endgames")}
+              onChange={onFilterChange}
+            />
+            Fins de Partie
+          </label>
+        </div>
+      );
+    }
+
+    function Article({title, url}) {
+      return (
+        <div className="article">
+          <a href={url} style={{color: "white"}}>{title}</a>
+        </div>
+      );
+    }
+
+    function Articles({articles}) {
+      return (
+        <div className="articles">
+          {articles.map(article => (
+            <Article
+              key={article.title}
+              title={article.title}
+              url={article.url}
+            />
+          ))}
+        </div>
+      );
+    }
+
+    function Nav() {
+      const [selectedFilters, setSelectedFilters] = React.useState([]);
+
+      function handleFilterChange(event) {
+        const { value, checked } = event.target;
+        if (checked) {
+          setSelectedFilters(prevFilters => [...prevFilters, value]);
+        } else {
+          setSelectedFilters(prevFilters =>
+            prevFilters.filter(filter => filter !== value)
+          );
+        }
+      }
+
+      const articles = [
+        {title: "Comment Étudier les Ouvertures Correctement", category: "opening-theory", url: "https://www.chess.com/article/view/how-to-study-openings-the-right-way"},
+        {title: "Chaque Premier Coup Classé", category: "opening-theory", url: "https://www.chess.com/article/view/every-chess-opening-move-ranked"},
+        {title: "Comment Trouver Le Meilleur Coup aux Échecs", category: "middlegame", url: "https://www.chess.com/article/view/how-to-find-the-best-chess-move"},
+        {title: "La Bataille Éternelle : Fous contre Cavaliers", category: "middlegame", url: "https://www.chess.com/article/view/the-eternal-battle-bishops-vs-knights"},
+        {title: "Ne Faites Jamais Ces Erreurs!", category: "endgames", url: "https://www.chess.com/article/view/never-make-these-chess-mistakes"},
+      ];
+
+      const filteredArticles = articles.filter(article =>
+        selectedFilters.includes(article.category)
+      );
+
+      return (
+        <div>
+          <nav className="nav-bar">
+            <a href="index_fr.html" className="logo"></a>
+            <div className="dropdown">
+              <button>Services</button>
+              <div className="dropdown-content">
+                <a href="coaching_fr.html">Coaching</a>
+                <a href="courses_fr.html">Cours</a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button>À Propos</button>
+              <div className="dropdown-content">
+                <a href="faq_fr.html">FAQ</a>
+                <a href="experts_fr.html">Experts</a>
+                <a href="testimonials_fr.html">Témoignages</a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button>Études</button>
+              <div className="dropdown-content">
+                <a href="articles_fr.html">Articles</a>
+                <a href="puzzles_fr.html">Puzzles</a>
+                <a href="videos_fr.html">Vidéos</a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button>Connecter</button>
+              <div className="dropdown-content">
+                <a href="competitions_fr.html">Compétitions</a>
+                <a href="contact_fr.html">Nous Contacter</a>
+                <a href="friends_fr.html">Amis</a>
+              </div>
+            </div>
+            <a href="articles.html"><button>EN</button></a>
+          </nav>
+          <Filters
+            selectedFilters={selectedFilters}
+            onFilterChange={handleFilterChange}
+          />
+          <Articles articles={filteredArticles} />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<Nav/>, document.getElementById('root'));
+  </script>
+</body>
+</html>

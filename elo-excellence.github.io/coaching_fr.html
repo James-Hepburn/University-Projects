@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #E8F2FE;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-bar {
+      align-items: center;
+      background-color: #001F3F;
+      display: flex;
+      height: 10vh;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .nav-bar button, .logo {
+      border: none;
+      cursor: pointer;
+      margin-right: 175px;
+    }
+
+    .nav-bar button, .card button {
+      background-color: #001F3F;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5vw;
+      outline: none;
+      padding: 1%; 
+    }
+
+    .nav-bar .dropdown {
+      position: relative;
+    }
+
+    .nav-bar .dropdown-content {
+      background-color: #001F3F;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      color: white;
+      display: none;
+      font-family: 'Roboto', sans-serif; 
+      min-width: 160px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .nav-bar .dropdown-content a {
+      color: white;
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+    }
+
+    .nav-bar .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .logo {
+      background-image: url("images/Logo.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex: 0 0 auto;
+      height: 10vh; 
+      margin-left: 0;
+      margin-right: 10%; 
+      width: 15vw;
+    }
+
+    .header {
+      color: black;
+      font-family: "Roboto", sans-serif;
+      font-size: 2vw;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      top: 15%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .cards-section {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 175px;
+    }
+
+    .card {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-family: "Roboto", sans-serif;
+      margin: 0 200px;
+      width: 300px;
+      height: 200px;
+    }
+
+    .card button {
+      cursor: pointer;
+      margin-top: 20px;
+      padding: 5%;
+    }
+
+    .card img {
+      height: 70%;
+      width: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <h3 class="header">Services de Coaching</h3>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <script type="text/babel">
+    function Nav() {
+      return (
+        <div>
+          <nav className="nav-bar">
+            <a href="index_fr.html" className="logo"></a>
+            <div className="dropdown">
+              <button>Services</button>
+              <div className="dropdown-content">
+                <a href="coaching_fr.html">Coaching</a>
+                <a href="courses_fr.html">Cours</a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button>À Propos</button>
+              <div className="dropdown-content">
+                <a href="faq_fr.html">FAQ</a>
+                <a href="experts_fr.html">Experts</a>
+                <a href="testimonials_fr.html">Témoignages</a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button>Études</button>
+              <div className="dropdown-content">
+                <a href="articles_fr.html">Articles</a>
+                <a href="puzzles_fr.html">Puzzles</a>
+                <a href="videos_fr.html">Vidéos</a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button>Connecter</button>
+              <div className="dropdown-content">
+                <a href="competitions_fr.html">Compétitions</a>
+                <a href="contact_fr.html">Nous Contacter</a>
+                <a href="friends_fr.html">Amis</a>
+              </div>
+            </div>
+          <a href="coaching.html"><button>EN</button></a>
+        </nav>
+        </div>
+      );
+    }
+
+    function Card({title, description, image, text, price}) {
+      const handleButtonClick = () => {
+        const url = `buy_coaching_fr.html?title=${encodeURIComponent(title)}&price=${encodeURIComponent(price)}`;
+        window.location.href = url;
+      };
+      
+      return (
+        <div className="card">
+          <img src={image} alt={title}/>
+          <h4>{title}</h4>
+          <p>{description}</p>
+          <button onClick={handleButtonClick}>{text}</button>
+        </div>
+      );
+    }
+
+    function CardsContent() {
+      return (
+        <div className="cards-section">
+          <Card
+            title="Leçons de Coaching Individuelles"
+            description="Des séances de coaching individuelles sur mesure pour les étudiants, offrant des conseils et des retours ciblés pour améliorer les compétences en jeu d'échecs."
+            image="images/Solo.png"
+            text="50$ / heure"
+            price="50$"
+          />
+          <Card
+            title="Leçons de Coaching en Groupe"
+            description="Participez à l'apprentissage collaboratif et améliorez vos compétences en jeu d'échecs ensemble grâce à des séances interactives de coaching en groupe."
+            image="images/Group.png"
+            text="30$ / heure"
+            price="30$"
+          />
+        </div>
+      );
+    }
+
+    ReactDOM.render(
+      <>
+        <Nav/>
+        <CardsContent/>
+      </>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>

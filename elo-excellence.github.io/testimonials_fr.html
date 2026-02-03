@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #E8F2FE;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-bar {
+      align-items: center;
+      background-color: #001F3F;
+      display: flex;
+      height: 10vh;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .nav-bar button, .logo {
+      border: none;
+      cursor: pointer;
+      margin-right: 175px;
+    }
+
+    .nav-bar button, .card button {
+      background-color: #001F3F;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5vw;
+      outline: none;
+      padding: 1%; 
+    }
+
+    .nav-bar .dropdown {
+      position: relative;
+    }
+
+    .nav-bar .dropdown-content {
+      background-color: #001F3F;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      color: white;
+      display: none;
+      font-family: 'Roboto', sans-serif; 
+      min-width: 160px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .nav-bar .dropdown-content a {
+      color: white;
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+    }
+
+    .nav-bar .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .logo {
+      background-image: url("images/Logo.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex: 0 0 auto;
+      height: 10vh; 
+      margin-left: 0;
+      margin-right: 10%; 
+      width: 15vw;
+    }
+
+    .header {
+      color: black;
+      font-family: "Roboto", sans-serif;
+      font-size: 2vw;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      top: 15%;
+      transform: translate(-50%, -50%);
+    }
+
+    .cards-section {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 175px;
+      margin-bottom: 50px;
+    }
+
+    .card {
+      align-items: center;
+      background-color: #001F3F;
+      display: flex;
+      flex-direction: column;
+      font-family: "Roboto", sans-serif;
+      margin: 0 100px; 
+      padding: 5%;
+      width: 400px; 
+    }
+
+    .card img {
+      height: auto;
+      width: 100%;
+    }
+
+    .card h4 {
+      color: white; 
+    }
+
+    .card p {
+      color: white; 
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <h3 class="header">Témoignages</h3>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <script type="text/babel">
+    function Nav() {
+      return (
+        <div>
+          <nav className="nav-bar">
+            <a href="index_fr.html" className="logo"></a>
+            <div className="dropdown">
+              <button>Services</button>
+              <div className="dropdown-content">
+                <a href="coaching_fr.html">Coaching</a>
+                <a href="courses_fr.html">Cours</a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button>À Propos</button>
+              <div className="dropdown-content">
+                <a href="faq_fr.html">FAQ</a>
+                <a href="experts_fr.html">Experts</a>
+                <a href="testimonials_fr.html">Témoignages</a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button>Études</button>
+              <div className="dropdown-content">
+                <a href="articles_fr.html">Articles</a>
+                <a href="puzzles_fr.html">Puzzles</a>
+                <a href="videos_fr.html">Vidéos</a>
+              </div>
+            </div>
+            <div className="dropdown">
+              <button>Connecter</button>
+              <div className="dropdown-content">
+                <a href="competitions_fr.html">Compétitions</a>
+                <a href="contact_fr.html">Nous Contacter</a>
+                <a href="friends_fr.html">Amis</a>
+              </div>
+            </div>
+          <a href="testimonials.html"><button>EN</button></a>
+        </nav>
+        </div>
+      );
+    }
+    function Card({title, description, image}) {
+      return (
+        <div className="card">
+          <img src={image} alt={title}/>
+          <h4>{description}</h4>
+          <h4>{title}</h4>
+        </div>
+      );
+    }
+
+    function CardsContent() {
+      return (
+        <div className="cards-section">
+          <Card
+            title="- John D."
+            description="“Je suis reconnaissant pour le coaching que j'ai reçu. L'expertise de l'entraîneur et son approche personnalisée m'ont aidé à élever mon jeu d'échecs à un tout nouveau niveau.”"
+            image="images/John.png"
+          />
+          <Card
+            title="- Sarah M."
+            description="“Rejoindre les séances de coaching en groupe a été un véritable tournant pour moi. L'environnement d'apprentissage collaboratif a vraiment accéléré mon progrès.”"
+            image="images/Sarah.png"
+          />
+          <Card
+            title="- Robert S."
+            description="“Je recommande les cours en ligne. J'ai pu étudier et améliorer mes tactiques aux échecs tout en apprenant à mon rythme, ce qui correspondait parfaitement à mon emploi du temps.”"
+            image="images/Robert.png"
+          />
+        </div>
+      );
+    }
+
+    ReactDOM.render(
+      <>
+        <Nav/>
+        <CardsContent/>
+      </>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #E8F2FE;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-bar {
+      align-items: center;
+      background-color: #001F3F;
+      display: flex;
+      height: 10vh;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .nav-bar button, .logo {
+      border: none;
+      cursor: pointer;
+      margin-right: 200px;
+    }
+
+    .nav-bar button {
+      background-color: #001F3F;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5vw;
+      outline: none;
+      padding: 1%; 
+    }
+
+    .nav-bar .dropdown {
+      position: relative;
+    }
+
+    .nav-bar .dropdown-content {
+      background-color: #001F3F;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      color: white;
+      display: none;
+      font-family: 'Roboto', sans-serif; 
+      min-width: 160px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .nav-bar .dropdown-content a {
+      color: white;
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+    }
+
+    .nav-bar .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .logo {
+      background-image: url("images/Logo.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex: 0 0 auto;
+      height: 10vh; 
+      margin-left: 0;
+      margin-right: 10%; 
+      width: 15vw;
+    }
+
+    .header {
+      color: black;
+      font-family: "Roboto", sans-serif;
+      font-size: 2vw;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      top: 15%;
+      transform: translate(-50%, -50%);
+    }
+
+    .form-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 175px;
+    }
+
+    .form-container form {
+      width: 300px;
+    }
+
+    .form-container input[type="text"], .form-container input[type="submit"], .form-container input[type="email"], .form-container select {
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .form-container select {
+      height: 40px; 
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #001F3F;
+      border: none;
+      color: white;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .type, .price {
+      color: black;
+      font-family: "Roboto", sans-serif;
+      font-size: 1vw;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      transform: translate(-50%, -50%);
+    }
+
+    .type {
+      top: 22%;
+    }
+
+    .price {
+      top: 27%;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <h3 class="header">Purchase a Course</h3>
+  <h5 class="type" id="type-info"></h5>
+  <h5 class="price" id="price-info"></h5>
+
+  <div class="form-container">
+    <form>
+      <input type="text" placeholder="Name" required/>
+      <input type="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+      <input type="text" placeholder="Billing address" required/>
+      <input type="text" placeholder="Card number" required/>
+      <input type="text" placeholder="Expiration date (MM/YY)" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}"/>
+      <input type="text" placeholder="CVC" required pattern="[0-9]{3}"/>
+      <input type="submit" value="Submit"/>
+    </form>
+  </div>
+  
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <script type="text/babel">
+    const urlParams = new URLSearchParams(window.location.search);
+    const title = urlParams.get('title');
+    const price = urlParams.get('price');
+    const typeInfo = document.getElementById('type-info');
+    const priceInfo = document.getElementById('price-info');
+    typeInfo.textContent = "Course selected: " + title;
+    priceInfo.textContent = " Course price: " + price;
+    
+    function Nav() {
+      return (
+        <nav className="nav-bar">
+          <a href="index.html" class="logo"></a>
+          <div className="dropdown">
+            <button>Services</button>
+            <div className="dropdown-content">
+              <a href="coaching.html">Coaching</a>
+              <a href="courses.html">Courses</a>
+            </div>
+          </div>
+          <div className="dropdown">
+            <button>About</button>
+            <div className="dropdown-content">
+              <a href="faq.html">FAQ</a>
+              <a href="experts.html">Experts</a>
+              <a href="testimonials.html">Testimonials</a>
+            </div>
+          </div>
+          <div className="dropdown">
+            <button>Study</button>
+            <div className="dropdown-content">
+              <a href="articles.html">Articles</a>
+              <a href="puzzles.html">Puzzles</a>
+              <a href="videos.html">Videos</a>
+            </div>
+          </div>
+          <div className="dropdown">
+            <button>Connect</button>
+            <div className="dropdown-content">
+              <a href="competitions.html">Competitions</a>
+              <a href="contact.html">Contact Us</a>
+              <a href="friends.html">Friends</a>
+            </div>
+          </div>
+          <a href="buy_courses_fr.html"><button>FR</button></a>
+        </nav>
+      );
+    }
+    
+    ReactDOM.render(<Nav/>, document.getElementById('root'));
+  </script>
+</body>
+</html>
