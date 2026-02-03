@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Map</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Cinzel", serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2f4f4f;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-size: 18px;
+      padding: 10px 15px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    header a:hover {
+      background-color: #556b2f;
+      border-color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #map {
+      width: 100%;
+      height: 500px;
+      margin: 20px 0;
+      border: 2px solid #2f4f4f;
+      border-radius: 10px;
+    }
+
+    .description {
+      text-align: justify;
+      margin: 20px;
+      padding: 20px;
+      background-color: #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">Home</a>
+    <a href="weapons.html">Weapons Overview</a>
+    <a href="craftsmanship.html">Craftsmanship</a>
+    <a href="artifacts.html">Artifacts</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="map.html">Map</a>
+    <a href="bibliography.html">Bibliography</a>
+  </header>
+
+  <main class="container">
+    <h1>Map</h1>
+    <p class="description">
+      Click on the markers to view the locations of the relics mentioned in the 'Artifacts' section.
+    </p>
+
+    <div id="map"></div>
+  </main>
+
+  <script>
+    const map = L.map('map').setView([51.505, -0.09], 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    const locations = [
+      {
+        name: "Gundestrup Cauldron Discovery Site",
+        coords: [56.2278, 9.2611],
+        description: "The site in Denmark where the Gundestrup Cauldron was found in a bog in 1891."
+      },
+      {
+        name: "Battersea Shield Discovery Site",
+        coords: [51.5081, -0.0871],
+        description: "The location in the River Thames, London, where the Battersea Shield was discovered in 1857."
+      },
+      {
+        name: "Agris Helmet Discovery Site",
+        coords: [45.7081, 0.1934],
+        description: "The cave in France where the Agris Helmet was found in 1981."
+      }
+    ];
+
+    locations.forEach(location => {
+      const marker = L.marker(location.coords).addTo(map);
+      marker.bindPopup(`<h3>${location.name}</h3><p>${location.description}</p>`);
+    });
+  </script>
+</body>
+
+</html>

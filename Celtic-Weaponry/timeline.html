@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Timeline</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Cinzel", serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2f4f4f;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-size: 18px;
+      padding: 10px 15px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    header a:hover {
+      background-color: #556b2f;
+      border-color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 20px 0;
+      padding: 20px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background-color: #2f4f4f;
+    }
+
+    .timeline-event {
+      position: relative;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 45%;
+    }
+
+    .timeline-event:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-event:nth-child(even) {
+      left: 55%;
+    }
+
+    .timeline-event::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background-color: #2f4f4f;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .timeline-event h3 {
+      color: #2f4f4f;
+      margin-bottom: 10px;
+    }
+
+    .timeline-event p {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">Home</a>
+    <a href="weapons.html">Weapons Overview</a>
+    <a href="craftsmanship.html">Craftsmanship</a>
+    <a href="artifacts.html">Artifacts</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="map.html">Map</a>
+    <a href="bibliography.html">Bibliography</a>
+  </header>
+
+  <main class="container">
+    <h1>Timeline</h1>
+    <p>The progression of Celtic weaponry began in the Urnfield culture with bronze weapons, moved to the iron innovations of the Hallstatt period, and ended with the expertise of the La Tene era.</p>
+
+    <div class="timeline">
+      <div class="timeline-event">
+        <h3>Urnfield Culture (1300 to 750 BC)</h3>
+        <p>The Urnfield culture was a late Bronze Age culture named after the custom of cremating the dead, placing their ashes inside urns, and burying them in fields. A notable feature of this culture was the advanced bronze technology used to create weaponry. Warriors of this time equipped body armour, helmets and shields, all made from bronze.</p>
+      </div>
+
+      <div class="timeline-event">
+        <h3>Hallstatt Culture (1200 to 450 BC)</h3>
+        <p>The Hallstatt culture began in the late Bronze Age (Hallstatt A) and ended in the early Iron Age (Hallstatt D). It focused on farming and metalworking, especially with iron. Members of the elite were buried with their iron swords, armour, and chariots, showcasing the replacement of bronze with iron tools.</p>
+      </div>
+
+      <div class="timeline-event">
+        <h3>La Tene Culture (450 to 1 BC)</h3>
+        <p>La Tene culture developed and flourished during the late Iron Age, an era known for its emphasis on trade and artistic creativity. Artisans crafted iron spears, swords and shields, often displaying cultural and personal designs. These designs symbolized the warriors’ status and identity within the community.</p>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
