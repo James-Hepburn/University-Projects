@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Famous Jewish Canadian Writers</title>
+  <link href = "https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap" rel = "stylesheet">
+
+  <style>
+    body {
+      background-color: #f9f6f1;
+      font-family: 'Lora', serif;
+      margin: 0;
+      padding: 0;
+      color: #2e2e2e;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background-color: #2f3e46;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f9f6f1;
+      font-family: 'Playfair Display', serif;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c9ada7;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      font-size: 42px;
+      margin-top: 60px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      font-size: 22px;
+      color: #6c5b7b;
+      margin-bottom: 40px;
+    }
+
+    footer {
+      background-color: #2f3e46;
+      color: #f9f6f1;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    
+    .main-content {
+      min-height: calc(100vh - 120px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .center-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .image-box img {
+      width: 250px;
+      height: auto;
+      max-height: 60vh;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .quote-box {
+      max-width: 400px;
+      font-style: italic;
+      font-size: 18px;
+      color: #6c5b7b;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2f3e46;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #f9f6f1;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #3b4a51;
+      color: #c9ada7;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href = "index.html">Home</a>
+
+      <div class = "dropdown">
+        <a href = "klein.html">A.M. Klein</a>
+        <div class = "dropdown-content">
+          <a href = "klein.html#biography">Biography</a>
+          <a href = "klein.html#works">Major Works</a>
+          <a href = "klein.html#themes">Themes & Style</a>
+          <a href = "klein.html#impact">Cultural Impact</a>
+          <a href = "klein.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "layton.html">Irving Layton</a>
+        <div class = "dropdown-content">
+          <a href = "layton.html#biography">Biography</a>
+          <a href = "layton.html#works">Major Works</a>
+          <a href = "layton.html#themes">Themes & Style</a>
+          <a href = "layton.html#impact">Cultural Impact</a>
+          <a href = "layton.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "richler.html">Mordecai Richler</a>
+        <div class = "dropdown-content">
+          <a href = "richler.html#biography">Biography</a>
+          <a href = "richler.html#works">Major Works</a>
+          <a href = "richler.html#themes">Themes & Style</a>
+          <a href = "richler.html#impact">Cultural Impact</a>
+          <a href = "richler.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "cohen.html">Leonard Cohen</a>
+        <div class = "dropdown-content">
+          <a href = "cohen.html#biography">Biography</a>
+          <a href = "cohen.html#works">Major Works</a>
+          <a href = "cohen.html#themes">Themes & Style</a>
+          <a href = "cohen.html#impact">Cultural Impact</a>
+          <a href = "cohen.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <a href = "sources.html">Sources</a>
+    </nav>
+  </header>
+
+  <div class = "main-section">
+    <h1>Famous Jewish Canadian Writers</h1>
+    <h3>A.M. Klein, Irving Layton, Mordecai Richler, and Leonard Cohen</h3>
+
+    <div class = "center-section">
+      <div class = "image-box">
+        <img id = "author-image" alt = "Author Image" src = "images/klein-home.jpg">
+      </div>
+      <div class = "quote-box">
+        <p id = "author-quote">'Where are the braves, the faces like autumn fruit, who stared at the child from the coloured frontispiece?' - A.M. Klein</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Created by James Hepburn - 300191654 - JCS 2301</p>
+    </footer>
+  </div>
+
+  <script>
+    var images = [
+      {src: "images/klein-home.jpg", quote: "'Where are the braves, the faces like autumn fruit, who stared at the child from the coloured frontispiece?' - A.M. Klein"},
+      {src: "images/layton-home.jpg", quote: "'Since I no longer expect anything from mankind except madness, meanness, and mendacity; egotism, cowardice, and self-delusion, I have stopped being a misanthrope'. - Irving Layton"},
+      {src: "images/richler-home.jpg", quote: "'I had, like any other young novelist, started out by believing the difficult thing was to get published and that, once you managed that, well, your financial problems were over. I discovered, like any other serious novelist, that actually they had only just begun'. - Mordecai Richler"},
+      {src: "images/cohen-home.webp", quote: "'There is a crack in everything, that's how the light gets in'. - Leonard Cohen"}
+    ];
+    var index = 0;
+
+    var image_box = document.getElementById ("author-image");
+    var quote_box = document.getElementById ("author-quote");
+
+    setInterval (() => {
+      index = (index + 1) % images.length;
+      image_box.src = images [index].src;
+      quote_box.textContent = images [index].quote;
+    }, 5000);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Irving Layton</title>
+  <link href = "https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap" rel = "stylesheet">
+
+  <style>
+    body {
+      background-color: #f9f6f1;
+      font-family: 'Lora', serif;
+      margin: 0;
+      padding: 0;
+      color: #2e2e2e;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background-color: #2f3e46;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f9f6f1;
+      font-family: 'Playfair Display', serif;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c9ada7;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      font-size: 42px;
+      margin-top: 60px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #6c5b7b;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #2f3e46;
+      color: #f9f6f1;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2f3e46;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #f9f6f1;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #3b4a51;
+      color: #c9ada7;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .facts ul {
+      list-style: none;
+      padding-left: 0;
+      background-color: #eee7dc;
+      border-left: 5px solid #6c5b7b;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .facts li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .accordion {
+      background-color: #eee7dc;
+      color: #2e2e2e;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 17px;
+      transition: background-color 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .accordion:hover {
+      background-color: #dfd2c3;
+    }
+
+    .accordion::after {
+      content: "▼";
+      float: right;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active::after {
+      transform: rotate(-180deg);
+    }
+
+    .panel {
+      padding: 0 20px;
+      background-color: #f9f6f1;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      border-left: 4px solid #6c5b7b;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background-color: #eee7dc;
+      border-left: 5px solid #6c5b7b;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+      color: #2f3e46;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href = "index.html">Home</a>
+
+      <div class = "dropdown">
+        <a href = "klein.html">A.M. Klein</a>
+        <div class = "dropdown-content">
+          <a href = "klein.html#biography">Biography</a>
+          <a href = "klein.html#works">Major Works</a>
+          <a href = "klein.html#themes">Themes & Style</a>
+          <a href = "klein.html#impact">Cultural Impact</a>
+          <a href = "klein.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "layton.html">Irving Layton</a>
+        <div class = "dropdown-content">
+          <a href = "layton.html#biography">Biography</a>
+          <a href = "layton.html#works">Major Works</a>
+          <a href = "layton.html#themes">Themes & Style</a>
+          <a href = "layton.html#impact">Cultural Impact</a>
+          <a href = "layton.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "richler.html">Mordecai Richler</a>
+        <div class = "dropdown-content">
+          <a href = "richler.html#biography">Biography</a>
+          <a href = "richler.html#works">Major Works</a>
+          <a href = "richler.html#themes">Themes & Style</a>
+          <a href = "richler.html#impact">Cultural Impact</a>
+          <a href = "richler.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "cohen.html">Leonard Cohen</a>
+        <div class = "dropdown-content">
+          <a href = "cohen.html#biography">Biography</a>
+          <a href = "cohen.html#works">Major Works</a>
+          <a href = "cohen.html#themes">Themes & Style</a>
+          <a href = "cohen.html#impact">Cultural Impact</a>
+          <a href = "cohen.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <a href = "sources.html">Sources</a>
+    </nav>
+  </header>
+
+  <h1>Irving Layton</h1>
+
+  <section id = "biography">
+    <h2>Biography</h2>
+
+    <div style = "display: flex; align-items: flex-start; gap: 20px;">
+      <img src = "images/layton-1.jpg" alt = "Irving Layton" style = "width: 180px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      
+      <div class = "facts">
+        <ul>
+          <li><strong>Full Name:</strong> Irving Peter Layton (né Israel Lazarovitch)</li>
+          <li><strong>Born:</strong> March 12, 1912 (Tirgu Neamţ, Romania)</li>
+          <li><strong>Immigrated to Canada:</strong> 1913, raised in Montreal</li>
+          <li><strong>Education:</strong> McGill University (BSc), McGill University (MA)</li>
+          <li><strong>Profession(s):</strong> Poet, short-story writer, essayist, professor, veteran</li>
+          <li><strong>Died:</strong> January 4, 2006 (Montreal, Canada)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id = "works">
+    <h2>Major Works</h2>
+
+    <button class = "accordion">Now is the Place (1948)</button>
+    <div class = "panel">
+      <p>This was one of Layton's earliest published collections of poetry. It laid the foundation for his future writing and marked his entrance into the literary world of Canada.</p>
+    </div>
+
+    <button class = "accordion">A Red Carpet for the Sun (1959)</button>
+    <div class = "panel">
+      <div style = "display: flex; align-items: flex-start; gap: 20px;">
+        <div style = "flex: 1;">
+          <p>This book marked the beginning of Layton's association with the publisher McClelland and Stewart. It contained collections of his previously published poems and was his only book to receive the Governor General's Award.</p>
+        </div>
+        
+        <img src = "images/layton-2.jpg" alt = "A Red Carpet for the Sun" style = "margin-top: 10px; width: 30%; border-radius: 6px;">
+      </div>
+    </div>
+
+    <button class = "accordion">For My Brother Jesus (1976)</button>
+    <div class = "panel">
+      <div style = "display: flex; align-items: flex-start; gap: 20px;">
+        <img src = "images/layton-3.jpg" alt = "For My Brother Jesus" style = "margin-top: 10px; width: 30%; border-radius: 6px;">
+        
+        <div style = "flex: 1;">
+          <p>This poetry collection is written as a letter to Jesus Christ. Layton used these poems to express his anger and resentment towards Christianity, particularly in respect to the persecution of the Jews.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id = "themes">
+    <h2>Themes & Style</h2>
+
+    <div class = "card">
+      <h3>Identity</h3>
+      <p>Layton's writings were deeply influenced by his identity as a Jewish Canadian. He frequently reflected on the Jewish identity within a predominantly Christian society. For example, in his poetry collection For My Brother Jesus (1976), Layton critiques the complacency of Western society and contemplates the persecution of Jews during the Holocaust. His writing was bold and confrontational, challenging cultural norms and questioning ingrained beliefs. Through his writing, Layton demonstrated that identity is not static; it is fluid and always evolving.</p>
+    </div>
+
+    <div class = "card">
+      <h3>Rebellion</h3>
+      <p>The theme of rebellion is one of the most prominent in Layton's work. It is what notably sets him apart from the other authors of his time, as he was determined to speak his truth without filter. His poetry is filled with examples of resistance against injustice and authoritative institutions. For instance, in his book A Red Carpet for the Sun (1959), Layton uses satire to critique organized religion and the elitism imposed on society. His writing overall would best be described as thought-provoking and engaging, with the way that he challenges readers to think critically for themselves and question their surrounding authority.</p>
+    </div>
+
+    <div class = "card">
+      <h3>Sexuality</h3>
+      <p>Layton expressed sexuality in his poetry as something natural and human, not as something taboo or shameful. He used it to illustrate the rawness of love, lust and desire. He frequently contrasted the power of sexual expression with the restrictiveness of religious and authoritative institutions. For example, in his book The Shattered Plinths (1968), he critiques the suppression of sexuality within a society in favour of purity or supposed morality. Layton challenged the literary norms of his time, using his openness to explore taboo topics that he believed were essential to human nature.</p>
+    </div>
+
+    <div class = "card">
+      <h3>Nature</h3>
+      <p>Layton uses the theme of nature in his writing to express the human condition. Much like his poetic style, he portrays nature as a powerful and untamed force. He contrasts the human experience with oceans, storms and animals. Layton uses nature to reject authority and conformity by drawing parallels between the primal forces of the natural world and the instincts within us all. Rather than feeling ashamed of his natural impulses, especially regarding sexuality, Layton uses his writing to challenge societal structures and question the ideas of morality.</p>
+    </div>
+  </section>
+
+  <section id = "impact">
+    <h2>Cultural Impact</h2>
+
+    <div class = "card">
+      <p>Layton and his writing made a lasting impact on the world of Canadian literature. His poetry was unapologetic and boldly expressive, unafraid to confront controversial topics with raw honesty. He believed that poetry should be used to challenge its readers and provoke them to question their society. This belief is what separated him from other authors and helped to shape him into a celebrated figure. Layton was also committed to mentorship, both as a professor and as a supporter of emerging poets. He played an important role in shaping the future voices of Canadian poetry, most notably with Leonard Cohen.</p>
+    </div>
+  </section>
+
+  <section id = "legacy">
+    <h2>Legacy & Recognition</h2>
+
+    <div style = "display: flex; align-items: flex-start; gap: 20px;">
+      <div class = "facts">
+        <ul>
+          <li>Governor General's Award for A Red Carpet for the Sun (1959)</li>
+          <li>University of Western Ontario President's Medal (1959)</li>
+          <li>Honourary Doctor of Civil Law from Bishops' University (1970)</li>
+          <li>Honourary Doctor of Literature from Concordia University (1976)</li>
+          <li>Life Achievement Award (1979)</li>
+          <li>Honourary Doctor of Literature from York University (1979)</li>
+          <li>Nominated for a Nobel prize (1982 and 1983)</li>
+        </ul>
+      </div>
+
+      <img src = "images/layton-4.webp" alt = "Irving Layton" style = "margin-top: 15px; width: 100%; max-width: 400px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    </div>
+  </section>
+
+  <footer>
+    <p>Created by James Hepburn - 300191654 - JCS 2301</p>
+  </footer>
+
+  <script>
+    var accordions = document.querySelectorAll (".accordion");
+
+    accordions.forEach (button => {
+      button.addEventListener ("click", () => {
+        button.classList.toggle ("active");
+        var panel = button.nextElementSibling;
+        
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

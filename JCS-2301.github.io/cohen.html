@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Leonard Cohen</title>
+  <link href = "https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap" rel = "stylesheet">
+
+  <style>
+    body {
+      background-color: #f9f6f1;
+      font-family: 'Lora', serif;
+      margin: 0;
+      padding: 0;
+      color: #2e2e2e;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background-color: #2f3e46;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f9f6f1;
+      font-family: 'Playfair Display', serif;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c9ada7;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      font-size: 42px;
+      margin-top: 60px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #6c5b7b;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #2f3e46;
+      color: #f9f6f1;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2f3e46;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #f9f6f1;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #3b4a51;
+      color: #c9ada7;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .facts ul {
+      list-style: none;
+      padding-left: 0;
+      background-color: #eee7dc;
+      border-left: 5px solid #6c5b7b;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .facts li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .accordion {
+      background-color: #eee7dc;
+      color: #2e2e2e;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 17px;
+      transition: background-color 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .accordion:hover {
+      background-color: #dfd2c3;
+    }
+
+    .accordion::after {
+      content: "▼";
+      float: right;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active::after {
+      transform: rotate(-180deg);
+    }
+
+    .panel {
+      padding: 0 20px;
+      background-color: #f9f6f1;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      border-left: 4px solid #6c5b7b;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background-color: #eee7dc;
+      border-left: 5px solid #6c5b7b;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+      color: #2f3e46;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href = "index.html">Home</a>
+      
+      <div class = "dropdown">
+        <a href = "klein.html">A.M. Klein</a>
+        <div class = "dropdown-content">
+          <a href = "klein.html#biography">Biography</a>
+          <a href = "klein.html#works">Major Works</a>
+          <a href = "klein.html#themes">Themes & Style</a>
+          <a href = "klein.html#impact">Cultural Impact</a>
+          <a href = "klein.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "layton.html">Irving Layton</a>
+        <div class = "dropdown-content">
+          <a href = "layton.html#biography">Biography</a>
+          <a href = "layton.html#works">Major Works</a>
+          <a href = "layton.html#themes">Themes & Style</a>
+          <a href = "layton.html#impact">Cultural Impact</a>
+          <a href = "layton.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "richler.html">Mordecai Richler</a>
+        <div class = "dropdown-content">
+          <a href = "richler.html#biography">Biography</a>
+          <a href = "richler.html#works">Major Works</a>
+          <a href = "richler.html#themes">Themes & Style</a>
+          <a href = "richler.html#impact">Cultural Impact</a>
+          <a href = "richler.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "cohen.html">Leonard Cohen</a>
+        <div class = "dropdown-content">
+          <a href = "cohen.html#biography">Biography</a>
+          <a href = "cohen.html#works">Major Works</a>
+          <a href = "cohen.html#themes">Themes & Style</a>
+          <a href = "cohen.html#impact">Cultural Impact</a>
+          <a href = "cohen.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <a href = "sources.html">Sources</a>
+    </nav>
+  </header>
+
+  <h1>Leonard Cohen</h1>
+
+  <section id = "biography">
+    <h2>Biography</h2>
+
+    <div style = "display: flex; align-items: flex-start; gap: 20px;">
+      <img src = "images/cohen-1.webp" alt = "Leonard Cohen" style = "width: 200px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      
+      <div class = "facts">
+        <ul>
+          <li><strong>Full Name:</strong> Leonard Norman Cohen</li>
+          <li><strong>Born:</strong> September 21, 1934 (Montreal, Canada)</li>
+          <li><strong>Education:</strong> McGill University (BA)</li>
+          <li><strong>Profession(s):</strong> Poet, novelist, singer, songwriter</li>
+          <li><strong>Died:</strong> November 7, 2016 (Los Angeles, USA)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id = "works">
+    <h2>Major Works</h2>
+
+    <button class = "accordion">Hallelujah (1984)</button>
+    <div class = "panel">
+      <p>This is one of Cohen's most celebrated songs. It has gained worldwide appeal and has been performed by many famous artists, such as Jeff Buckley and Rufus Wainwright.</p>
+    </div>
+
+    <button class = "accordion">The Spice-Box of Earth (1961)</button>
+    <div class = "panel">
+      <div style = "display: flex; align-items: flex-start; gap: 20px;">
+        <div style = "flex: 1;">
+          <p>This is the collection that established Cohen's reputation as a lyric poet. The poems in this collection relate to the poet's role, Jewish tradition and love.</p>
+        </div>
+        
+        <img src = "images/cohen-2.jpg" alt = "The Spice-Box of Earth" style = "margin-top: 10px; width: 30%; border-radius: 6px;">
+      </div>
+    </div>
+
+    <button class = "accordion">Beautiful Losers (1966)</button>
+    <div class = "panel">
+      <div style = "display: flex; align-items: flex-start; gap: 20px;">
+        <img src = "images/cohen-3.jpg" alt = "Beautiful Losers" style = "margin-top: 10px; width: 30%; border-radius: 6px;">
+        
+        <div style = "flex: 1;">
+          <p>This novel follows a scholarly narrator who is researching the life of an Iroquois saint, while mourning the loss of both his wife and his lover. This is one of Cohen's most celebrated and controversial works because of his depiction of sexuality and spirituality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id = "themes">
+    <h2>Themes & Style</h2>
+
+    <div class = "card">
+      <h3>Spirituality</h3>
+      <p>Spirituality is a theme that is present throughout all of Cohen's work, whether in his poetry, his novels or his music. Although he was raised in the Jewish faith, Cohen was fascinated by many forms of religion, such as Christianity and Buddhism. Many of his songs, such as Hallelujah (1984) and Suzanne (1968), contain biblical references and religious imagery. However, Cohen was not creating his works to preach his beliefs. Instead, he used spirituality to explain the human experience, especially in regards to pain and love.</p>
+    </div>
+
+    <div class = "card">
+      <h3>Love</h3>
+      <p>Within his work, Cohen delves into all aspects of love, focusing on romantic longing, the expression of sexuality and heartbreak. Rather than concentrating on the beautiful aspects of love, he highlights its human nature and how it can often be painful. Many of his songs depict broken relationships and complicated emotions. He also used spirituality to explore the idea of love, frequently comparing his lovers to divine beings who offer more than an earthly connection. Overall, Cohen demonstrates that love is agonizing and complex but essential to the human experience.</p>
+    </div>
+
+    <div class = "card">
+      <h3>Loss</h3>
+      <p>The idea of loss, along with the emotions of pain and suffering that come with it, is a recurring theme in Cohen's work. His stories and songs often depict a lover who has passed, a relationship that has ended or the loss of spiritual connection. Cohen uses the concept of loss to explore the uncomfortable reality of grief, portraying it as a natural part of life. He frames the experience as a transformative period for his characters. Cohen reminds his audience that, although painful, loss is a necessary element that shapes us as humans.</p>
+    </div>
+
+    <div class = "card">
+      <h3>Redemption</h3>
+      <p>The theme of redemption is closely tied to Cohen's themes of love and loss. It is never simple and is typically earned through the experience of suffering. Cohen presents a realistic view of redemption, showing that even the most damaged individuals are capable of achieving it. For example, in his song Anthem (1992), he writes, "There is a crack, a crack in everything / That's how the light gets in," suggesting that despite one's imperfections, there is always hope. Cohen emphasizes the importance of redemption and uses his work to offer comfort to those who may be suffering.</p>
+    </div>
+  </section>
+
+  <section id = "impact">
+    <h2>Cultural Impact</h2>
+
+    <div class = "card">
+      <p>As a musician, Cohen brought international fame to the Canadian music scene. His work spanned many genres and themes, creating a lasting impact on people all around the world. His subject matter, including the ideas of love, loss and grief, is at the core of the human experience, allowing many audiences to relate and making his work timeless. His legacy comes not only from his music, but also from his poetry and novels. His written work showcased a similar emotional depth, earning him a reputation as an important literary figure in Canada.</p>
+    </div>
+  </section>
+
+  <section id = "legacy">
+    <h2>Legacy & Recognition</h2>
+
+    <div style = "display: flex; align-items: flex-start; gap: 20px;">
+      <div class = "facts">
+        <ul>
+          <li>Won the MacNaughton Prize and the Peterson Memorial Prize (1955)</li>
+          <li>Received the Canada Council Arts Scholarship (1961)</li>
+          <li>Won the Quebec Literary Competition Prize for The Favourite Game (1964)</li>
+          <li>Received an honorary degree from Dalhousie University (1970)</li>
+          <li>Won the Golden Rose for I am a Hotel (1984)</li>
+          <li>Won the Canadian Author's Association Literary Award for Book of Mercy (1985)</li>
+          <li>Won the Genie Award for “Angel Eyes” (1986)</li>
+          <li>Received the Columbia Records Crystal Globe Award (1988)</li>
+          <li>Inducted into the Canadian Music Hall of Fame (1991)</li>
+          <li>Made an Officer of the Order of Canada (1991)</li>
+          <li>Received an honorary degree from McGill University (1992)</li>
+          <li>Won the Juno Award for Male Vocalist of the Year (1993)</li>
+          <li>Won the Juno Award for Best Video for Closing Time (1993)</li>
+          <li>Received the Governor General’s Award for Lifetime Artistic Achievement (1993)</li>
+          <li>Won the Juno Award for Songwriter of the Year (1994)</li>
+          <li>Ordained a Rinzai Buddhist monk (1996)</li>
+          <li>Won the Fryderyk Award for Best Foreign Album for Ten New Songs (2001)</li>
+          <li>Received the SNEP Award for over 100,000 copies sold of Ten New Songs in France (2002)</li>
+          <li>Inducted into the Canadian Folk Music Walk of Fame (2005)</li>
+          <li>Inducted into the Canadian Songwriters Hall of Fame (2006)</li>
+          <li>Inducted into the Rock and Roll Hall of Fame (2008)</li>
+          <li>Made a Grand Officer of the National Order of Quebec (2008)</li>
+          <li>Won the Musicnotes Song of the Year Award for “Hallelujah” (2008)</li>
+          <li>Received the Grammy Lifetime Achievement Award (2010)</li>
+          <li>Won the Porin Award for Live in London (2010)</li>
+          <li>Inducted into the Songwriters Hall of Fame (2010)</li>
+        </ul>
+      </div>
+
+      <img src = "images/cohen-4.jpg" alt = "Leonard Cohen" style = "margin-top: 15px; width: 50%; max-width: 400px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    </div>
+  </section>
+
+  <footer>
+    <p>Created by James Hepburn - 300191654 - JCS 2301</p>
+  </footer>
+
+  <script>
+    var accordions = document.querySelectorAll (".accordion");
+
+    accordions.forEach (button => {
+      button.addEventListener ("click", () => {
+        button.classList.toggle ("active");
+        var panel = button.nextElementSibling;
+        
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>A.M. Klein</title>
+  <link href = "https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap" rel = "stylesheet">
+
+  <style>
+    body {
+      background-color: #f9f6f1;
+      font-family: 'Lora', serif;
+      margin: 0;
+      padding: 0;
+      color: #2e2e2e;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background-color: #2f3e46;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f9f6f1;
+      font-family: 'Playfair Display', serif;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c9ada7;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      font-size: 42px;
+      margin-top: 60px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #6c5b7b;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #2f3e46;
+      color: #f9f6f1;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2f3e46;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #f9f6f1;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #3b4a51;
+      color: #c9ada7;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .facts ul {
+      list-style: none;
+      padding-left: 0;
+      background-color: #eee7dc;
+      border-left: 5px solid #6c5b7b;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .facts li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .accordion {
+      background-color: #eee7dc;
+      color: #2e2e2e;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 17px;
+      transition: background-color 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .accordion:hover {
+      background-color: #dfd2c3;
+    }
+
+    .accordion::after {
+      content: "▼";
+      float: right;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active::after {
+      transform: rotate(-180deg);
+    }
+
+    .panel {
+      padding: 0 20px;
+      background-color: #f9f6f1;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      border-left: 4px solid #6c5b7b;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background-color: #eee7dc;
+      border-left: 5px solid #6c5b7b;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+      color: #2f3e46;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href = "index.html">Home</a>
+
+      <div class = "dropdown">
+        <a href = "klein.html">A.M. Klein</a>
+        <div class = "dropdown-content">
+          <a href = "klein.html#biography">Biography</a>
+          <a href = "klein.html#works">Major Works</a>
+          <a href = "klein.html#themes">Themes & Style</a>
+          <a href = "klein.html#impact">Cultural Impact</a>
+          <a href = "klein.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "layton.html">Irving Layton</a>
+        <div class = "dropdown-content">
+          <a href = "layton.html#biography">Biography</a>
+          <a href = "layton.html#works">Major Works</a>
+          <a href = "layton.html#themes">Themes & Style</a>
+          <a href = "layton.html#impact">Cultural Impact</a>
+          <a href = "layton.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "richler.html">Mordecai Richler</a>
+        <div class = "dropdown-content">
+          <a href = "richler.html#biography">Biography</a>
+          <a href = "richler.html#works">Major Works</a>
+          <a href = "richler.html#themes">Themes & Style</a>
+          <a href = "richler.html#impact">Cultural Impact</a>
+          <a href = "richler.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <div class = "dropdown">
+        <a href = "cohen.html">Leonard Cohen</a>
+        <div class = "dropdown-content">
+          <a href = "cohen.html#biography">Biography</a>
+          <a href = "cohen.html#works">Major Works</a>
+          <a href = "cohen.html#themes">Themes & Style</a>
+          <a href = "cohen.html#impact">Cultural Impact</a>
+          <a href = "cohen.html#legacy">Legacy & Recognition</a>
+        </div>
+      </div>
+
+      <a href = "sources.html">Sources</a>
+    </nav>
+  </header>
+
+  <h1>A.M. Klein</h1>
+
+  <section id = "biography">
+    <h2>Biography</h2>
+
+    <div style = "display: flex; align-items: flex-start; gap: 20px;">
+      <img src = "images/klein-1.jpg" alt = "A.M. Klein" style = "width: 180px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      
+      <div class = "facts">
+        <ul>
+          <li><strong>Full Name:</strong> Abraham Moses Klein</li>
+          <li><strong>Born:</strong> February 14, 1909 (Ratno, Ukraine)</li>
+          <li><strong>Immigrated to Canada:</strong> 1910, raised in Montreal</li>
+          <li><strong>Education:</strong> McGill University (BA); Université de Montréal (Law)</li>
+          <li><strong>Profession(s):</strong> Poet, journalist, editor, lawyer, educator</li>
+          <li><strong>Died:</strong> August 20, 1972 (Montreal, Canada)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id = "works">
+    <h2>Major Works</h2>
+
+    <button class = "accordion">Hath Not a Jew (1940)</button>
+    <div class = "panel">
+      <p>This was the first collection of poems published by Klein. It included verses that reflect Jewish culture throughout history, with a strong focus on anti-Semitism.</p>
+    </div>
+
+    <button class = "accordion">The Hitleriad (1944)</button>
+    <div class = "panel">
+      <div style = "display: flex; align-items: flex-start; gap: 20px;">
+        <div style = "flex: 1;">
+          <p>This is a satirical poem by Klein about the crimes of the German government. It specifically addresses the Nazi threat to European Jews. </p>
+        </div>
+        
+        <img src = "images/klein-2.jpg" alt = "The Hitleriad" style = "margin-top: 10px; width: 60%; border-radius: 6px;">
+      </div>
+    </div>
+
+    <button class = "accordion">The Second Scroll (1951)</button>
+    <div class = "panel">
+      <div style = "display: flex; align-items: flex-start; gap: 20px;">
+        <img src = "images/klein-3.jpg" alt = "The Second Scroll" style = "margin-top: 10px; width: 30%; border-radius: 6px;">
+        
+        <div style = "flex: 1;">
+          <p>This is the only novel published by Klein. He was inspired by a trip he took near the end of World War II, under the sponsorship of the Canadian Jewish Congress (CJC), to European and North African refugee camps. His novel is about a modern-day search for a Messiah to lead the Jews to the Promised Land.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id = "themes">
+    <h2>Themes & Style</h2>
+
+    <div class = "card">
+      <h3>Identity</h3>
+      <p>Klein's work often focuses on themes of identity, especially pertaining to his Jewish Canadian ancestry. Identity is a complex concept for Klein and is often highlighted in his work through the exploration of duality. For example, the conflict between tradition and modernism, or between cultural preservation and assimilation. Klein himself struggled with this concept, being raised in Montreal in a predominantly Anglophone society while also honouring his heritage as a European Jew. In his work, Klein used his childhood experiences and his family's background (ex. heirlooms or Hebrew) to express the duality of his identity, highlighting how these symbols shaped both his cultural identity and his life as a Canadian.</p>
+    </div>
+
+    <div class = "card">
+      <h3>Spirituality</h3>
+      <p>Spirituality is a central theme in Klein's work, which is not surprising given his strong religious background. He often incorporated allusions to the bible and religious symbolism within his writing. For example, the title of his novel The Second Scroll (1951) is a reference to the Jewish faith's foundation from the Old Testament, which was also known as the First Scroll. Furthermore, Klein's language frequently mirrored that of religious scripture. By employing these elements in his writing, Klein explored spirituality and debated the connection it had with the modern world.</p>
+    </div>
+
+    <div class = "card">
+      <h3>The Holocaust</h3>
+      <p>Klein began publishing his writing near the end of World War II and often used his work as a platform to highlight the horrors of the Holocaust. He never shied away from depicting the atrocities and instead, confronted them directly by addressing the devastating impact that it had on the Jewish community. For example, in his poem The Hitleriad (1944), Klein demonstrated the absurdity, brutality and evilness of the Nazi regime by satirizing Adolf Hitler. Most importantly though, Klein used his writing to ensure that both the living and dead victims of the Holocaust were never forgotten.</p>
+    </div>
+
+    <div class = "card">
+      <h3>Politics</h3>
+      <p>Klein was not only a poet but a political activist. He used his position as a journalist and editor to advocate for Jewish causes, particularly by fighting against anti-Semitism and supporting Zionism. Many of his poems were politically themed and addressed the establishment of Israel as the homeland for Jews, as well as the issue of anti-Semitism experienced throughout the world. For example, many of the essays that he wrote during his time as an editor for the Canadian Jewish Chronicle emphasized the need for a Jewish homeland in the aftermath of the Holocaust. Overall, Klein used his work to not only comment on his political environment but to also preach his core beliefs.</p>
+    </div>
+  </section>
+
+  <section id = "impact">
+    <h2>Cultural Impact</h2>
+
+    <div class = "card">
+      <p>Klein is one of the most renowned Jewish Canadian writers. His work continues to influence and inspire modern Canadian poets. Klein's writing offered a unique perspective by blending his Jewish heritage with his Canadian upbringing. His poetry focused on themes of identity, spirituality, politics and the Holocaust. He used these themes to challenge readers and to engage them with his worldview. Many of his politically and religiously focused works positioned him as a conductor between Jewish tradition and modern Canadian society. His contributions also paved the way for later Jewish Canadian writers, such as Irving Layton.</p>
+    </div>
+  </section>
+
+  <section id = "legacy">
+    <h2>Legacy & Recognition</h2>
+
+    <div style = "display: flex; align-items: flex-start; gap: 20px;">
+      <div class = "facts">
+        <ul>
+          <li>Governor-General's Medal for The Rocking Chair (1949)</li>
+          <li>Lorne Pierce Medal by the Royal Society of Canada (1956)</li>
+          <li>Designated as a national historic person (2007)</li>
+          <li>Commemorative plaque at the Jewish Public Library (2010)</li>
+        </ul>
+      </div>
+
+      <img src = "images/klein-4.jpg" alt = "Plaque at Jewish Public Library" style = "margin-top: 15px; width: 100%; max-width: 400px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    </div>
+  </section>
+
+  <footer>
+    <p>Created by James Hepburn - 300191654 - JCS 2301</p>
+  </footer>
+
+  <script>
+    var accordions = document.querySelectorAll (".accordion");
+
+    accordions.forEach (button => {
+      button.addEventListener ("click", () => {
+        button.classList.toggle ("active");
+        var panel = button.nextElementSibling;
+        
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
