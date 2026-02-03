@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Byte and Needle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  
+    body {
+      background-color: black;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .nav-button {
+      background-color: #002a22;
+      color: white;
+      border: none;
+      font-size: 18px;
+      height: 100px;
+      line-height: 100px;
+      margin-left: 15px;
+      vertical-align: middle;
+      padding-top: 0;
+    }
+
+    .logo-button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      outline: none;
+      height: 100px;
+      width: 150px;
+      overflow: hidden;
+      vertical-align: middle;
+      padding-top: 0;
+    }
+
+    .logo-button img {
+      border: none;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    .book-an-appointment {
+      color: #e8992a;
+      font-family: "Copperplate Gothic Light", sans-serif;
+      font-size: 4vw; 
+      text-align: center;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+      margin-top: 20px; 
+    }
+    
+    .col-auto {
+      padding-left: 0;
+    }
+    
+    input.form-control,
+    textarea.form-control,
+    select.form-control {
+      background-color: #002a22;
+      color: white;
+      width: 100%; 
+    }
+    
+    select.form-control option {
+      background-color: #002a22;
+      color: white;
+    }
+
+    .input-area {
+      margin-bottom: 20px;
+    }
+
+    button.send-button {
+      width: 100%; 
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid" style="background-color: #002a22;">
+    <div class="row align-items-center">
+      <div class="col-auto">
+        <button class="btn logo-button" id="logoButton">
+          <img src="images/Logo.png" alt="Logo">
+        </button>
+        <button class="btn nav-button" id="servicesButton">SERVICES</button>
+        <button class="btn nav-button" id="galleryButton">GALLERY</button>
+        <button class="btn nav-button" id="artistsButton">ARTISTS</button>
+        <button class="btn nav-button" id="contactButton">CONTACT</button>
+        <button class="btn nav-button" id="bookingButton">BOOKING</button>
+        <button class="btn nav-button" id="faqButton">FAQ</button>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="book-an-appointment">Book an Appointment</h1> 
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 offset-md-3"> 
+        <form id="contactForm">
+          <div class="input-area">
+            <label for="name" class="form-label" style="color: white;">Name</label>
+            <input type="text" class="form-control" id="name" required placeholder="Enter your name">
+          </div>
+          <div class="input-area">
+            <label for="email" class="form-label" style="color: white;">Email</label>
+            <input type="email" class="form-control" id="email" required placeholder="Enter your email">
+          </div>
+          <div class="input-area">
+            <label for="phone" class="form-label" style="color: white;">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" required placeholder="Enter your phone number">
+          </div>
+          <div class="input-area">
+            <label for="date" class="form-label" style="color: white;">Date</label>
+            <input type="date" class="form-control" id="date" required placeholder="mm/dd/yyyy">
+          </div>
+          <div class="input-area">
+            <label for="time" class="form-label" style="color: white;">Time</label>
+            <input type="time" class="form-control" id="time" required placeholder="hh:mm">
+          </div>
+          <div class="input-area">
+            <label for="service" class="form-label" style="color: white;">Service</label>
+            <select class="form-control" id="service" required>
+              <option value="">Select a service</option>
+              <option value="piercing">Piercing</option>
+              <option value="tattoo">Tattoo</option>
+              <option value="flashart">Flash Art</option>
+            </select>
+          </div>
+          <div class="input-area">
+            <label for="expert" class="form-label" style="color: white;">Expert</label>
+            <select class="form-control" id="expert" required>
+              <option value="">Select an expert</option>
+              <option value="Emre">Emre</option>
+              <option value="Gabbie">Gabbie</option>
+            </select>
+          </div>
+          <div class="input-area">
+            <label for="message" class="form-label" style="color: white;">Message</label>
+            <textarea class="form-control" id="message" rows="5" required placeholder="Enter your message"></textarea>
+          </div>
+          <div class="input-area">
+            <button type="submit" class="btn send-button" style="background-color: #e8992a;">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var logoButton = document.getElementById('logoButton');
+      logoButton.addEventListener('click', function() {
+        window.location.href = 'index.html';
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var servicesButton = document.getElementById('servicesButton');
+      servicesButton.addEventListener('click', function() {
+        window.location.href = 'services.html';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var galleryButton = document.getElementById('galleryButton');
+      galleryButton.addEventListener('click', function() {
+        window.location.href = 'gallery.html';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var artistsButton = document.getElementById('artistsButton');
+      artistsButton.addEventListener('click', function() {
+        window.location.href = 'artists.html';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var contactButton = document.getElementById('contactButton');
+      contactButton.addEventListener('click', function() {
+        window.location.href = 'contact.html';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var bookingButton = document.getElementById('bookingButton');
+      bookingButton.addEventListener('click', function() {
+        window.location.href = 'booking.html';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var faqButton = document.getElementById('faqButton');
+      faqButton.addEventListener('click', function() {
+        window.location.href = 'faq.html';
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var contactForm = document.getElementById('contactForm');
+      contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var date = document.getElementById('date').value;
+        var time = document.getElementById('time').value;
+        var service = document.getElementById('service').value;
+        var expert = document.getElementById('expert').value;
+        var confirmationURL = 'confirmation.html?time=' + encodeURIComponent(time) + '&date=' + encodeURIComponent(date) + '&service=' + encodeURIComponent(service) + '&expert=' + encodeURIComponent(expert);
+      window.location.href = confirmationURL;
+      });
+    });
+  </script>
+</body>
+</html>

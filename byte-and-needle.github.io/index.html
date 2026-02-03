@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Byte and Needle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  
+    body {
+      background-image: url('images/Background.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .nav-button {
+      background-color: #002a22;
+      color: white;
+      border: none;
+      font-size: 18px;
+      height: 100px;
+      line-height: 100px;
+      margin-left: 15px;
+      vertical-align: middle;
+      padding-top: 0;
+    }
+
+    .logo-button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      outline: none;
+      height: 100px;
+      width: 150px;
+      overflow: hidden;
+      vertical-align: middle;
+      padding-top: 0;
+    }
+
+    .logo-button img {
+      border: none;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    .company-name {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #e8992a;
+      font-family: "Copperplate Gothic Light", sans-serif;
+      font-size: 5vw; 
+      text-align: center;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    }
+
+    .col-auto {
+      padding-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid" style="background-color: #002a22;">
+    <div class="row align-items-center">
+      <div class="col-auto">
+        <button class="btn logo-button" id="logoButton">
+          <img src="images/Logo.png" alt="Logo">
+        </button>
+        <button class="btn nav-button" id="servicesButton">SERVICES</button>
+        <button class="btn nav-button" id="galleryButton">GALLERY</button>
+        <button class="btn nav-button" id="artistsButton">ARTISTS</button>
+        <button class="btn nav-button" id="contactButton">CONTACT</button>
+        <button class="btn nav-button" id="bookingButton">BOOKING</button>
+        <button class="btn nav-button" id="faqButton">FAQ</button>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="company-name">Byte and Needle</h1>
+
+  <script src="js/bootstrap.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var logoButton = document.getElementById('logoButton');
+      logoButton.addEventListener('click', function() {
+        window.location.href = 'index.html';
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var servicesButton = document.getElementById('servicesButton');
+      servicesButton.addEventListener('click', function() {
+        window.location.href = 'services.html';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var galleryButton = document.getElementById('galleryButton');
+      galleryButton.addEventListener('click', function() {
+        window.location.href = 'gallery.html';
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var artistsButton = document.getElementById('artistsButton');
+      artistsButton.addEventListener('click', function() {
+        window.location.href = 'artists.html';
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var contactButton = document.getElementById('contactButton');
+      contactButton.addEventListener('click', function() {
+        window.location.href = 'contact.html';
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var bookingButton = document.getElementById('bookingButton');
+      bookingButton.addEventListener('click', function() {
+        window.location.href = 'booking.html';
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var faqButton = document.getElementById('faqButton');
+      faqButton.addEventListener('click', function() {
+        window.location.href = 'faq.html';
+      });
+    });
+  </script>
+</body>
+</html>
